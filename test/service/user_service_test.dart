@@ -8,14 +8,14 @@ import '../test_configs/test_data_config.dart';
 void main() {
   final MockUserService userService = MockUserService();
   test('Verify user service returns proper data', () async {
-    when(userService.getUserProfile(TestDataConfig.USER))
+    when(userService.getUserProfile(TestDataConfig.user))
         .thenAnswer((realInvocation) async {
-      return TestDataConfig.JSON_USER;
+      return TestDataConfig.jsonUser;
     });
-    final response = await userService.getUserProfile(TestDataConfig.USER);
+    final response = await userService.getUserProfile(TestDataConfig.user);
 
     expect(response.username, 'John Smith');
-    expect(response.profile, TestDataConfig.JSON_USER);
+    expect(response.profile, TestDataConfig.jsonUser);
     expect(response.profile,
         'http://img2.findthebest.com/sites/default/files/688/media/images/Mingle_159902_i0.png');
     expect(response.avatar,

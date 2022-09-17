@@ -16,6 +16,7 @@ class MomentViewCubit extends Cubit<MomentViewState> {
       final response = await userService.getUserProfile(Constants.userName);
       emit(MomentViewState.onSuccessState(response));
     } catch (e) {
+      print(e);
       emit(MomentViewState.onErrorState(e.toString()));
     }
   }

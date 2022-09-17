@@ -1,5 +1,5 @@
 class UrlConstants {
-  static const host = "http://localhost:2727";
+  static const host = "http://localhost:3000";
 
   static String userProfleUrl(String name) {
     return "${UrlConstants.host}/user/$name";

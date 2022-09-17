@@ -21,11 +21,11 @@ void main() {
       cubit.getUserTweets();
     },
     setUp: () async {
-      when(await tweetService.getTweets(TestDataConfig.USER)).thenAnswer(
-        (realInvocation) => TestDataConfig.JSON_TWEETS,
+      when(await tweetService.getTweets(TestDataConfig.user)).thenAnswer(
+        (realInvocation) => TestDataConfig.jsonTweets,
       );
       when(await _momentViewCubit.getUserTweets()).thenAnswer(
-        (realInvocation) => TestDataConfig.JSON_TWEETS,
+        (realInvocation) => TestDataConfig.jsonTweets,
       );
     },
     verify: (MomentViewCubit cubit) {

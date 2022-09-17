@@ -3,18 +3,18 @@
 import 'package:mobiledev_wechatmoments_flutter/model/mymodels.dart';
 
 class TestDataConfig {
-  static const String USER = "jsmith";
-  static const String URL_HOST = "http://localhost:2727";
+  static const String user = "jsmith";
+  static const String url_host = "http://localhost:3000";
 
-  static User JSON_USER = User(
+  static User jsonUser = User(
       profile:
           "http://img2.findthebest.com/sites/default/files/688/media/images/Mingle_159902_i0.png",
       avatar:
           "http://info.thoughtworks.com/rs/thoughtworks2/images/glyph_badge.png",
       nick: "John Smith",
-      username: TestDataConfig.USER);
+      username: TestDataConfig.user);
 
-  static const JSON_TWEETS = [
+  static const jsonTweets = [
     {
       "content": "Good.",
       "sender": [
