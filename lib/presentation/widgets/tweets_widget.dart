@@ -28,14 +28,16 @@ class TweetsWidget extends StatelessWidget {
                     contentPadding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
                     leading: Image.network(
-                      'https://www.solidbackgrounds.com/images/1920x1080/1920x1080-gray-solid-color-background.jpg',
+                      state.tweets.isEmpty
+                          ? 'https://www.solidbackgrounds.com/images/1920x1080/1920x1080-gray-solid-color-background.jpg'
+                          : "https://thoughtworks-mobile-2018.herokuapp.com/images/user/avatar/000.jpeg",
                       height: 40,
                       width: 40,
                       fit: BoxFit.cover,
                     ),
                     title: const Text(''),
                     subtitle: Text(
-                      state.tweets[index].content ?? '',
+                      state.tweets[index].content ?? "Don't have content",
                       style: const TextStyle(color: Colors.black, fontSize: 14),
                     ),
                   );

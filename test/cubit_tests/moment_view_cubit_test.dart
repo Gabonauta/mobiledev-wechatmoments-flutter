@@ -6,12 +6,11 @@ import 'package:mobiledev_wechatmoments_flutter/presentation/cubit/moment_view_c
 import 'package:mobiledev_wechatmoments_flutter/service/tweet_service.dart';
 import 'package:mockito/mockito.dart';
 
-import '../service/tweet_service_test.dart';
 import '../test_configs/test_data_config.dart';
 
 void main() {
   final MomentViewCubit _momentViewCubit = MomentViewCubit();
-  final MockUserService userService = MockUserService();
+
   final MockTweetService tweetService = MockTweetService();
 
   blocTest(

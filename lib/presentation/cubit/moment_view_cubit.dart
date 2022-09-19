@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobiledev_wechatmoments_flutter/config/constants.dart';
-import 'package:mobiledev_wechatmoments_flutter/model/mymodels.dart';
+import 'package:mobiledev_wechatmoments_flutter/models/mymodels.dart';
 import 'package:mobiledev_wechatmoments_flutter/service/tweet_service.dart';
 import 'package:mobiledev_wechatmoments_flutter/service/user_service.dart';
 
@@ -14,9 +14,9 @@ class MomentViewCubit extends Cubit<MomentViewState> {
   getUserProfile() async {
     try {
       final response = await userService.getUserProfile(Constants.userName);
+
       emit(MomentViewState.onSuccessState(response));
     } catch (e) {
-      print(e);
       emit(MomentViewState.onErrorState(e.toString()));
     }
   }

@@ -1,7 +1,9 @@
 import 'package:http/http.dart' as http;
 import 'package:mobiledev_wechatmoments_flutter/config/url_constants.dart';
-import '../model/mymodels.dart';
+
 import 'dart:convert';
+
+import '../models/mymodels.dart';
 
 class TweetService {
   Future<List> getTweets(String userName) async {

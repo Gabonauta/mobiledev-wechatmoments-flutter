@@ -20,8 +20,9 @@ class _MomentViewPageState extends State<MomentViewPage> {
   }
 
   loadData() {
-    print("loading");
+    print("loading profile");
     _momentViewCubit.getUserProfile();
+    print("loading tweets");
     _momentViewCubit.getUserTweets();
   }
 

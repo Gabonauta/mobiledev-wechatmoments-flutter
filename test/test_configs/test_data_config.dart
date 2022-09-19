@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:mobiledev_wechatmoments_flutter/model/mymodels.dart';
+import 'package:mobiledev_wechatmoments_flutter/models/mymodels.dart';
 
 class TestDataConfig {
   static const String user = "jsmith";

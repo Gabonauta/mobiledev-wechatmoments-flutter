@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobiledev_wechatmoments_flutter/presentation/cubit/moment_view_cubit.dart';
 
-import '../../model/mymodels.dart';
+import '../../models/mymodels.dart';
 
 class HeaderWidget extends StatelessWidget {
   final MomentViewCubit momentViewCubit;
@@ -27,7 +27,7 @@ class HeaderWidget extends StatelessWidget {
                   child: Stack(
                     children: [
                       Image.network(
-                        'https://www.solidbackgrounds.com/images/1920x1080/1920x1080-gray-solid-color-background.jpg',
+                        user.profile!,
                         height: MediaQuery.of(context).size.height / 2.6,
                         width: double.infinity,
                         fit: BoxFit.cover,
@@ -47,7 +47,7 @@ class HeaderWidget extends StatelessWidget {
                         bottom: 0,
                         right: 10,
                         child: Image.network(
-                          'https://www.solidbackgrounds.com/images/125x125/125x125-antique-white-solid-color-background.jpg',
+                          user.avatar!,
                           height: 100,
                           width: 100,
                           fit: BoxFit.cover,
