@@ -14,8 +14,8 @@ void main() {
     });
     final response = await userService.getUserProfile(TestDataConfig.user);
 
-    expect(response.username, 'John Smith');
-    expect(response.profile, TestDataConfig.jsonUser);
+    expect(response.nick.toString(), 'John Smith');
+    expect(response.username, TestDataConfig.jsonUser);
     expect(response.profile,
         'http://img2.findthebest.com/sites/default/files/688/media/images/Mingle_159902_i0.png');
     expect(response.avatar,

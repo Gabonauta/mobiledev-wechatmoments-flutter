@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobiledev_wechatmoments_flutter/presentation/cubit/moment_view_cubit.dart';
 
 import '../../models/mymodels.dart';
+import '../cubit/moment_view_state.dart';
 
 class HeaderWidget extends StatelessWidget {
   final MomentViewCubit momentViewCubit;

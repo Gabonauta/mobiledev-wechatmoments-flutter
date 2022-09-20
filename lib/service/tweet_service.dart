@@ -19,7 +19,6 @@ class TweetService {
               (item) => Tweet.fromJson(item),
             )
             .toList();
-        print(tweets);
         return tweets;
       } catch (e) {
         print(e);
