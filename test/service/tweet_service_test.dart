@@ -15,8 +15,8 @@ void main() {
     });
     final response = await tweetService.getTweets(TestDataConfig.user);
 
-    expect(response, 'Good.');
-    expect(response[2], 'Super hero');
+    expect(response[0]["content"], 'Good.');
+    expect(response[0]["sender"][0]["nick"], 'Super hero');
   });
 
   test('Verify tweets service returns proper data', () async {
@@ -26,8 +26,8 @@ void main() {
     });
     final response = await tweetService.getTweets(TestDataConfig.user);
 
-    expect(TestDataConfig.jsonUser.nick.substring(0, 4).toLowerCase(), 'john');
-    expect(response.length, 3);
+    expect(TestDataConfig.user, 'jsmith');
+    expect(response.length, 1);
   });
 }
 

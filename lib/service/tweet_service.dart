@@ -21,7 +21,6 @@ class TweetService {
             .toList();
         return tweets;
       } catch (e) {
-        print(e);
         throw "Unable to retrieve tweets.";
       }
     } else {

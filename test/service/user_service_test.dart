@@ -1,5 +1,6 @@
 // @dart=2.7
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mobiledev_wechatmoments_flutter/models/mymodels.dart';
 import 'package:mobiledev_wechatmoments_flutter/service/user_service.dart';
 import 'package:mockito/mockito.dart';
 
@@ -14,8 +15,8 @@ void main() {
     });
     final response = await userService.getUserProfile(TestDataConfig.user);
 
-    expect(response.nick.toString(), 'John Smith');
-    expect(response.username, TestDataConfig.jsonUser);
+    expect(response.nick, 'John Smith');
+    expect(response.username, "jsmith");
     expect(response.profile,
         'http://img2.findthebest.com/sites/default/files/688/media/images/Mingle_159902_i0.png');
     expect(response.avatar,
@@ -24,3 +25,5 @@ void main() {
 }
 
 class MockUserService extends Mock implements UserService {}
+
+class MockUser extends Mock implements User {}
