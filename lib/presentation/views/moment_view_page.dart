@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobiledev_wechatmoments_flutter/presentation/cubit/moment_view_cubit.dart';
 import 'package:mobiledev_wechatmoments_flutter/presentation/widgets/header_widget.dart';
 import 'package:mobiledev_wechatmoments_flutter/presentation/widgets/tweets_widget.dart';
@@ -11,11 +12,12 @@ class MomentViewPage extends StatefulWidget {
 }
 
 class _MomentViewPageState extends State<MomentViewPage> {
-  final MomentViewCubit _momentViewCubit = MomentViewCubit();
+  late MomentViewCubit _momentViewCubit;
 
   @override
   void initState() {
     super.initState();
+    _momentViewCubit = BlocProvider.of<MomentViewCubit>(context);
     loadData();
   }
 

@@ -1,21 +1,19 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobiledev_wechatmoments_flutter/config/constants.dart';
 import 'package:mobiledev_wechatmoments_flutter/models/mymodels.dart';
-import 'package:mobiledev_wechatmoments_flutter/service/tweet_service.dart';
-import 'package:mobiledev_wechatmoments_flutter/service/user_service.dart';
 
+import '../repository/repository.dart';
 import 'moment_view_state.dart';
 
 class MomentViewCubit extends Cubit<MomentViewState> {
-  MomentViewCubit() : super(MomentViewState.onDefaultState());
-
-  final UserService userService = UserService();
-
-  final TweetService tweetService = TweetService();
-
+  MomentViewCubit({required this.userService, required this.tweetService})
+      : super(MomentViewState.onDefaultState());
+  final UsersRepository userService;
+  final TweetsRepository tweetService;
   getUserProfile() async {
     try {
-      final response = await userService.getUserProfile(Constants.userName);
+      final response =
+          await userService.getUserProfile(userName: Constants.userName);
 
       emit(MomentViewState.onSuccessState(response));
     } catch (e) {
@@ -25,7 +23,8 @@ class MomentViewCubit extends Cubit<MomentViewState> {
 
   getUserTweets() async {
     try {
-      final response = await tweetService.getTweets(Constants.userName);
+      final response =
+          await tweetService.getTweets(userName: Constants.userName);
 
       List<Tweet> tweetsList = [];
       tweetsList = response.cast<Tweet>();

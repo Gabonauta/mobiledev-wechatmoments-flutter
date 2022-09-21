@@ -14,27 +14,29 @@ void main() {
 
   final MockTweetService tweetService = MockTweetService();
 
-  blocTest(
+  blocTest<MomentViewCubit, MomentViewState>(
     'test bloc states when amount due and api gives success response',
     build: () => _momentViewCubit,
-    act: (MockMomentViewCubit cubit) {
+    act: (MomentViewCubit cubit) {
       cubit.getUserTweets();
     },
     setUp: () async {
-      when(await tweetService.getTweets(TestDataConfig.user)).thenAnswer(
+      when(await tweetService.getTweets(userName: TestDataConfig.user))
+          .thenAnswer(
         (realInvocation) => TestDataConfig.jsonTweets,
       );
       when(await _momentViewCubit.getUserTweets()).thenAnswer(
         (realInvocation) => TestDataConfig.jsonTweets,
       );
     },
-    verify: (MockMomentViewCubit cubit) {
-      final state = cubit.state as MockMomentViewTweetsSucccessState;
+    verify: (MomentViewCubit cubit) {
+      final state = cubit.state as MomentViewTweetsSucccessState;
+
       expect(state.tweets.length, 2);
     },
     expect: () => [
       isA<MomentViewLoadingState>(),
-      isA<MockMomentViewTweetsSucccessState>(),
+      isA<MomentViewTweetsSucccessState>(),
     ],
   );
 }

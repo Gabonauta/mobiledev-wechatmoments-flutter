@@ -9,11 +9,12 @@ import '../test_configs/test_data_config.dart';
 void main() {
   final MockUserService userService = MockUserService();
   test('Verify user service returns proper data', () async {
-    when(userService.getUserProfile(TestDataConfig.user))
+    when(userService.getUserProfile(userName: TestDataConfig.user))
         .thenAnswer((realInvocation) async {
       return TestDataConfig.jsonUser;
     });
-    final response = await userService.getUserProfile(TestDataConfig.user);
+    final response =
+        await userService.getUserProfile(userName: TestDataConfig.user);
 
     expect(response.nick, 'John Smith');
     expect(response.username, "jsmith");
