@@ -23,8 +23,8 @@ class MomentViewCubit extends Cubit<MomentViewState> {
 
   getUserTweets() async {
     try {
-      final response =
-          await tweetService.getTweets(userName: Constants.userName);
+      final response = await tweetService.getTweets(
+          userName: Constants.userName, forceApi: true);
 
       List<Tweet> tweetsList = [];
       tweetsList = response.cast<Tweet>();
