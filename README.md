@@ -2,6 +2,13 @@
 
 A new Flutter project.
 
+## We chat
+
+Show user tweets fetched from an API.
+Muestra los tweets recopilados por usuario.
+![Image text](https://drive.google.com/file/d/1faZCTuRnGZPi58OPpMg4gAzbkiw1pmZh/view)
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
