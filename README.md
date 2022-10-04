@@ -6,7 +6,7 @@ A new Flutter project.
 
 Show user tweets fetched from an API.
 Muestra los tweets recopilados por usuario.
-![Screenshot_1663617284](https://user-images.githubusercontent.com/30781044/193888246-a1c5dda6-d15c-4e9d-b3f3-bd34f97ca5d1.png){:height="36px" width="36px"}
+![Screenshot_1663617284](https://user-images.githubusercontent.com/30781044/193888246-a1c5dda6-d15c-4e9d-b3f3-bd34f97ca5d1.png)
 
 
 ## Getting Started
